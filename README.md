@@ -1,4 +1,4 @@
-# SuperWiFi - Next Generation Captive Portal (v5.5.0)
+# SuperWiFi - Next Generation Captive Portal (v5.5.1)
 
 SuperWiFi is an ultra-fast, robust, and beautifully designed Captive Portal system tailored for OpenWrt routers. Built from the ground up by **Saeed Muhammad**, it offers state-of-the-art voucher management, strict session control, Cloud Sync integration, and a modern, highly responsive user interface compatible with all devices.
 
@@ -22,8 +22,8 @@ Run this command on your OpenWrt router via SSH to download, extract, and instal
 ```bash
 rm -rf /tmp/superwifi-bash* && \
 cd /tmp && \
-wget https://raw.githubusercontent.com/Gloory1/SuperWIFI/main/superwifi-bash-v5.5.0.tar.gz && \
-tar -xzf superwifi-bash-v5.5.0.tar.gz && \
+wget https://raw.githubusercontent.com/Gloory1/SuperWIFI/main/superwifi-bash-v5.5.1.tar.gz && \
+tar -xzf superwifi-bash-v5.5.1.tar.gz && \
 cd superwifi-bash-v5 && \
 chmod +x install.sh && \
 ./install.sh
@@ -36,8 +36,8 @@ Use this command to update an existing SuperWiFi installation to the latest vers
 ```bash
 rm -rf /tmp/superwifi-bash* && \
 cd /tmp && \
-wget https://raw.githubusercontent.com/Gloory1/SuperWIFI/main/superwifi-bash-v5.5.0.tar.gz && \
-tar -xzf superwifi-bash-v5.5.0.tar.gz && \
+wget https://raw.githubusercontent.com/Gloory1/SuperWIFI/main/superwifi-bash-v5.5.1.tar.gz && \
+tar -xzf superwifi-bash-v5.5.1.tar.gz && \
 cd superwifi-bash-v5 && \
 chmod +x update.sh && \
 ./update.sh
