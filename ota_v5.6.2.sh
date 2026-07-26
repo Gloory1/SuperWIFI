@@ -121,8 +121,8 @@ fi
 [ -f "$SRC_DIR/etc/superwifi-version" ] && \
     cp "$SRC_DIR/etc/superwifi-version" /etc/superwifi-version
 
-# Remove legacy template that caused design reversion on restart
-rm -f /www/superwifi/login.html.tpl 2>/dev/null || true
+# Remove legacy template and old cgi-bin/luci override file if present
+rm -f /www/superwifi/login.html.tpl /www/cgi-bin/luci 2>/dev/null || true
 
 log_info "Setting executable permissions..."
 chmod +x /usr/lib/superwifi/*.sh    2>/dev/null || true
@@ -130,7 +130,6 @@ chmod +x /usr/sbin/sw               2>/dev/null || true
 chmod +x /usr/sbin/sw-acct.sh      2>/dev/null || true
 chmod +x /usr/sbin/sw-sync.sh      2>/dev/null || true
 chmod +x /www/cgi-bin/*.sh         2>/dev/null || true
-chmod +x /www/cgi-bin/luci         2>/dev/null || true
 chmod +x /www/index.cgi            2>/dev/null || true
 chmod +x /etc/init.d/superwifi     2>/dev/null || true
 
