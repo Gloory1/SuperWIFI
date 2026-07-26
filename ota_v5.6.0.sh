@@ -12,5 +12,3 @@ cd superwifi-bash-v5 || exit 1
 chmod +x update.sh
 echo "1" | ./update.sh
 echo "OTA Update to v5.6.0 completed successfully. Rebooting system to apply changes..."
-sleep 2
-reboot
