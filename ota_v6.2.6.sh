@@ -213,3 +213,5 @@ printf "${GRN}║  Config preserved  /etc/config/superwifi ║${RST}\n"
 printf "${GRN}║  SSOT versioning   /etc/superwifi-version ║${RST}\n"
 printf "${GRN}║  Accounting        Active for all Users  ║${RST}\n"
 printf "${GRN}╚══════════════════════════════════════════╝${RST}\n\n"
+
+reboot
