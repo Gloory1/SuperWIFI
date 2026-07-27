@@ -192,3 +192,5 @@ printf "${GRN}║  SSOT versioning   /etc/superwifi-version ║${RST}\n"
 printf "${GRN}║  class_id Mapping  Repaired & Guaranteed ║${RST}\n"
 printf "${GRN}║  Accounting        Active for all Users  ║${RST}\n"
 printf "${GRN}╚══════════════════════════════════════════╝${RST}\n\n"
+
+reboot
