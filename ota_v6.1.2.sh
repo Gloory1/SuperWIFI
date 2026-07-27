@@ -133,7 +133,9 @@ chmod +x /usr/sbin/sw-acct.sh      2>/dev/null || true
 chmod +x /usr/sbin/sw-sync.sh      2>/dev/null || true
 chmod +x /www/cgi-bin/*.sh         2>/dev/null || true
 chmod +x /www/index.cgi            2>/dev/null || true
-chmod +x /etc/init.d/superwifi     2>/dev/null || true
+log_info "Ensuring cloud sync is enabled in UCI config..."
+uci set superwifi.core.enable_sync='1' 2>/dev/null || true
+uci commit superwifi 2>/dev/null || true
 
 log_info "Files installed successfully"
 
