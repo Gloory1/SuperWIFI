@@ -114,6 +114,29 @@ rm -f /usr/lib/superwifi/sw-sentinel.sh \
 
 rm -f /tmp/sw-acct.lock /tmp/sw-sync.lock /tmp/sw-sentinel.lock 2>/dev/null || true
 
+# Ensure standard new timing options exist in UCI
+OLD_SEC=$(uci get superwifi.core.check_interval_sec 2>/dev/null || echo "")
+CUR_ACCT=$(uci get superwifi.core.acct_interval 2>/dev/null || echo "")
+if [ -z "$CUR_ACCT" ]; then
+    if [ -n "$OLD_SEC" ] && [ "$OLD_SEC" -ge 60 ]; then
+        CALC_MIN=$(( OLD_SEC / 60 ))
+        [ "$CALC_MIN" -lt 1 ] && CALC_MIN=1
+        uci set superwifi.core.acct_interval="$CALC_MIN"
+    else
+        uci set superwifi.core.acct_interval='1'
+    fi
+fi
+
+CUR_SYNC=$(uci get superwifi.core.sync_interval 2>/dev/null || echo "")
+if [ -z "$CUR_SYNC" ]; then
+    uci set superwifi.core.sync_interval='5'
+fi
+
+CUR_SENTINEL=$(uci get superwifi.core.sentinel_enabled 2>/dev/null || echo "")
+if [ -z "$CUR_SENTINEL" ]; then
+    uci set superwifi.core.sentinel_enabled='1'
+fi
+
 # Purge legacy UCI config entries
 uci delete superwifi.core.check_interval_sec 2>/dev/null || true
 uci delete superwifi.core.enable_sync 2>/dev/null || true
