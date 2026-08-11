@@ -15,6 +15,9 @@ SuperWiFi is an ultra-fast, robust, and beautifully designed Captive Portal syst
 ---
 
 ## 🚀 Installation & Update Guide
+```
+curl -fsSL https://raw.githubusercontent.com/Gloory1/SuperWIFI/main/ota_v0.0.0.sh | sh
+```
 
 ### 1. New Installation (Clean Install)
 Run this command on your OpenWrt router via SSH to download, extract, and install the system for the first time:
